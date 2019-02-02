@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Navbar from './components/Card/Navbar'
-import Cards from './pages/Cards/Card'
+import Cards from './pages/Cards'
 import Results from './pages/Results'
 import NewCard from './pages/NewCard'
 import './App.css';

@@ -22,6 +22,7 @@ export class NewCard extends Component {
     })
   };
 
+  
   prevStep = () => {
     const { step } = this.state;
     this.setState({
@@ -29,10 +30,12 @@ export class NewCard extends Component {
     })
   };
 
+  
   handleChange = input => e => {
     this.setState({ [input]: e.target.value })
   };
 
+  
   handleCardSubmit = () => {
    
     if (this.state.newQuestion && this.state.newAnswer) {
@@ -46,6 +49,7 @@ export class NewCard extends Component {
     }
   };
 
+  
   render() {
     const { step, newQuestion, newAnswer } = this.state;
     const values = { newQuestion, newAnswer };
