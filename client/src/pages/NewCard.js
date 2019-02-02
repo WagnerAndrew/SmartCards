@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import NewQuestion from './NewQuestion';
-import NewAnswer from './NewAnswer';
-import CardConfirm from './CardConfirm'
-import CardSuccess from './CardSuccess'
+import NewQuestion from '../components/NewCard/NewQuestion';
+import NewAnswer from '../components/NewCard/NewAnswer';
+import CardConfirm from '../components/NewCard/CardConfirm'
+import CardSuccess from '../components/NewCard/CardSuccess'
+import API from  '../utils/API'
 
 export class NewCard extends Component {
 
   state = {
     step: 1,
     newQuestion: '',
-    newAnswer: ''
+    newAnswer: '', 
+    guess: false
 
   }
 
@@ -31,6 +33,18 @@ export class NewCard extends Component {
     this.setState({ [input]: e.target.value })
   };
 
+  handleCardSubmit = () => {
+   
+    if (this.state.newQuestion && this.state.newAnswer) {
+      API.saveCard({
+        question: this.state.newQuestion,
+        answer: this.state.newAnswer, 
+        guess: this.state.guess
+      })
+        .then(res => this.nextStep())
+        .catch(err => console.log(err));
+    }
+  };
 
   render() {
     const { step, newQuestion, newAnswer } = this.state;
@@ -57,6 +71,7 @@ export class NewCard extends Component {
       case 3:
         return (
           <CardConfirm
+          handleCardSubmit={this.handleCardSubmit}
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           values={values}

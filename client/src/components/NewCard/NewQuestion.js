@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Row, Col, Input } from 'react-materialize'
+import { Button, Row, Input } from 'react-materialize'
 
 
 

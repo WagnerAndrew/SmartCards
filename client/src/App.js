@@ -1,21 +1,17 @@
-import React, { Component } from 'react';
-import Navbar from './components/Navbar'
-import Card from './components/Card'
+import React, { Component } from 'react'
+import Navbar from './components/Card/Navbar'
+import Cards from './pages/Cards/Card'
+import Results from './pages/Results'
+import NewCard from './pages/NewCard'
 import './App.css';
-import CardButtons from './components/CardButtons';
-import Results from './components/Results';
-import NewCard from './components/NewCard';
 
 class App extends Component {
   render() {
     return (
       <div className="App container">
         <Navbar/>
-
-        <Card/>
-        <CardButtons/>
+        <Cards/>
         
-
       </div>
     );
   }

@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Button, Row} from 'react-materialize'
 
-export class NewAnswer extends Component {
+
+export class CardConfirm extends Component {
 
     continue = e => {
         e.preventDefault();
-        // PROCESS ENTRIES HERE - SEND TO EXPRESS TO CREATE CARD //
-        this.props.nextStep();
+        this.props.handleCardSubmit();
     }
 
     back = e => {
@@ -41,7 +41,7 @@ export class NewAnswer extends Component {
                     Back
                 </Button>
                 
-                <Button waves='light' className="green lighten-2  newCardBtn" onClick={this.continue}>
+                <Button waves='light' className="green lighten  newCardBtn" onClick={this.continue}>
                     Looks Good! Save it
                 </Button>
             </>
@@ -49,10 +49,4 @@ export class NewAnswer extends Component {
     }
 }
 
-const styles = {
-    button: {
-        margin: 15
-    }
-}
-
-export default NewAnswer
+export default CardConfirm
