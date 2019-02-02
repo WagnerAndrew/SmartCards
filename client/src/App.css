@@ -1,0 +1,29 @@
+
+.App {
+  text-align: center;
+  
+}
+
+
+.card {
+  width: 80%;
+  height: auto;
+  margin: 2em auto;
+  position: relative;
+  padding-bottom: 3em;
+  
+}
+
+
+.dropdown-content li a {
+  color: black !important;
+}
+
+
+.results {
+  margin-top: 1em;
+}
+
+.inputField {
+  margin-top: 4em;
+}
