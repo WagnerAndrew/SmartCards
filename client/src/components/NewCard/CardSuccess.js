@@ -5,7 +5,6 @@ export class CardSuccess extends Component {
 
     continue = e => {
         e.preventDefault();
-        // PROCESS ENTRIES HERE - SEND TO EXPRESS TO CREATE CARD //
         this.props.nextStep();
     }
 

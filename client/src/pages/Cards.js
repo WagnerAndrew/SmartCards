@@ -7,9 +7,11 @@ export class Cards extends Component {
 
     state = {
         cards: [],
+        correct: [], 
+        incorrect: [],
         question: '',
         answer: '',
-        guess: false
+        index: 0
 
     }
 
@@ -19,28 +21,46 @@ export class Cards extends Component {
 
 
     loadCards = () => {
+        const { index } = this.state;
         API.getCards()
             .then(res =>
                     // console.log("loadCards data is: ",res.data)
 
-                this.setState({ cards: res.data, question: res.data[0].question, answer: res.data[0].answer})
+                this.setState({ cards: res.data, correct: [], incorrect: [], question: res.data[index].question, answer: res.data[index].answer})
             )
             .catch(err => console.log(err));
     };
 
 
     nextCard = () => {
-        const { step } = this.state;
-        this.setState({
-            step: step + 1
-        })
+        const { index, cards } = this.state;
+        if (index < cards.length){
+            this.setState({
+                index: index + 1,
+                question: cards[index].question,
+                answer: cards[index].answer
+            })
+        }else {
+            this.setState({
+                index: 0,
+                question: cards[index].question,
+                answer: cards[index].answer
+            })
+        }
+    };
+
+    correct = () => {
+        const {question, answer} = this.state;
+        
+        this.state.correct.push({question: question, answer: answer})
     };
 
 
-    handleChange = input => e => {
-        this.setState({ [input]: e.target.value })
+    incorrect = () => {
+        const {question, answer} = this.state;
+        
+        this.state.incorrect.push({question: question, answer: answer})
     };
-
 
     render() {
         const { question, answer } = this.state;
@@ -49,7 +69,7 @@ export class Cards extends Component {
         return (
             <>
                 <Card question={this.state.question} answer={this.state.answer}/>
-                <CardButtons />
+                <CardButtons nextCard={this.nextCard} correct={this.correct} incorrect={this.incorrect}/>
             </>
         )
     }
