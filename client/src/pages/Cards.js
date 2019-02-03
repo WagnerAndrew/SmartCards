@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Card from '../components/Card/Card';
 import CardButtons from '../components/Card/CardButtons'
+import Results from '../components/Card/Results'
 import API from '../utils/API'
 
 export class Cards extends Component {
@@ -11,7 +12,8 @@ export class Cards extends Component {
         incorrect: [],
         question: '',
         answer: '',
-        index: 0
+        index: 0,
+        step: 1
 
     }
 
@@ -62,16 +64,45 @@ export class Cards extends Component {
         this.state.incorrect.push({question: question, answer: answer})
     };
 
-    render() {
-        const { question, answer } = this.state;
-        const values = { question, answer };
+    results = () => {
+        const {step} = this.state;
 
-        return (
-            <>
-                <Card question={this.state.question} answer={this.state.answer}/>
-                <CardButtons nextCard={this.nextCard} correct={this.correct} incorrect={this.incorrect}/>
-            </>
-        )
+        this.setState ({
+            step: step + 1
+        })
+    }
+
+    render() {
+        const { step, question, answer } = this.state;
+        
+        switch (step) {
+          case 1:
+            return (
+                <>
+                <Card question={question} answer={answer}/>
+                <CardButtons nextCard={this.nextCard} correct={this.correct} incorrect={this.incorrect} results={this.results}/>
+                </>
+            )
+          case 2:
+            return (
+              <Results />
+            )
+        }
     }
 }
 export default Cards
+
+
+
+
+//   render() {
+//     const { step, correct, incorrect, question, answer } = this.state;
+    
+
+//     return (
+//         <>
+//             <Card question={this.state.question} answer={this.state.answer}/>
+//             <CardButtons nextCard={this.nextCard} correct={this.correct} incorrect={this.incorrect}/>
+//         </>
+//     )
+// }

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Row, Button } from 'react-materialize'
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 export class CardSuccess extends Component {
 

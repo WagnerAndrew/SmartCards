@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Button, Icon, Row, Col } from 'react-materialize'
+import { Link } from "react-router-dom"
 
 export class CardButtons extends Component {
 
@@ -9,21 +10,26 @@ export class CardButtons extends Component {
         this.props.incorrect();
     }
 
+
     nextCard = e => {
         e.preventDefault();
         this.props.nextCard();
     }
+
 
     correct = e => {
         e.preventDefault();
         this.props.correct();
     }
 
+    results = e => {
+        e.preventDefault();
+        this.props.results();
+    }
+
 
     render() {
-
         return (
-
             <>
                 <Row>
                     <Col s={4} className="center-align">
@@ -31,13 +37,11 @@ export class CardButtons extends Component {
                             <Icon>thumb_down</Icon>
                         </Button>
                     </Col>
-
                     <Col s={4} className="center-align">
                         <Button waves='light' className="grey lighten-3 black-text" onClick={this.nextCard}>
                             Next Card
                     </Button>
                     </Col>
-
                     <Col s={4} className="center-align">
                         <Button waves='light' className="green lighten" onClick={this.correct}>
                             <Icon>thumb_up</Icon>
@@ -45,14 +49,11 @@ export class CardButtons extends Component {
                     </Col>
                 </Row>
                 <Row>
-
                     <Col s={12} className="center-align">
-                        <Button waves='light' flat={true} className="grey lighten-5 black-text" >
+                        <Button waves='light' flat={true} className="grey lighten-5 black-text" onClick={this.results} >
                             Finish
-        
                         </Button>
                     </Col>
-
                 </Row>
             </>
         )
