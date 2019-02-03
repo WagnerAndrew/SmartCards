@@ -13,8 +13,8 @@ export default () => (
                                 <NavItem divider />
                                 <NavItem onClick={() => console.log('test click')}>CSS</NavItem>
                         </Dropdown> */}
-                        <NavItem onClick={() => console.log('test click')}>Libraries</NavItem>
-                        <NavItem onClick={() => console.log('test click')}>Add Cards</NavItem>
+                        <NavItem href="/">Libraries</NavItem>
+                        <NavItem href="/add">Add Cards</NavItem>
                 </Navbar>
         </>
 )
