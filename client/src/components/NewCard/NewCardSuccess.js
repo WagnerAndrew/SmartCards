@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Row, Button } from 'react-materialize'
 import { Link } from "react-router-dom"
 
-export class CardSuccess extends Component {
+export class NewCardSuccess extends Component {
 
     continue = e => {
         e.preventDefault();
@@ -34,4 +34,4 @@ export class CardSuccess extends Component {
 }
 
 
-export default CardSuccess
+export default NewCardSuccess

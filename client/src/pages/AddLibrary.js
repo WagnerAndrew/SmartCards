@@ -1,40 +1,60 @@
 import React, { Component } from 'react';
-import { Button, Row, Input } from 'react-materialize'
-import API from '../utils/API'
+import NewLibraryForm from '../components/NewLibrary/NewLibraryForm'
+import NewLibrarySuccess from '../components/NewLibrary/NewLibrarySuccess'
+import API from  '../utils/API'
 
 export class AddLibrary extends Component {
 
-    state = {
-        newLibrary: ''
+  state = {
+    step: 1,
+    newLibrary: ''
+  }
+
+  nextStep = () => {
+    const { step } = this.state;
+    this.setState({
+      step: step + 1
+    })
+  };
+  
+  handleChange = input => e => {
+    this.setState({ [input]: e.target.value })
+  };
+
+  
+  handleLibrarySubmit = () => {
+   
+    if (this.state.newLibrary) {
+      API.saveLibrary({
+        library: this.state.newLibrary
+
+      })
+        .then(res => this.nextStep())
+        .catch(err => console.log(err));
     }
+  };
 
-    handleChange = input => e => {
-        this.setState({ [input]: e.target.value })
-    };
+  
+  render() {
+    const { step, newLibrary } = this.state;
+    const values = { newLibrary };
 
-    render() {
-        const { newLibrary } = this.state;
-        const values = { newLibrary };
-
+    switch (step) {
+      case 1:
         return (
-            <>
-                <Row className="inputField">
-                    <span className="card-title black-text"><h4>Add A New Library</h4></span>
-                    <Input
-                        placeholder="Enter Your New Library Here"
-                        s={12}
-                        onChange={this.handleChange('newLibrary')}
-                        defaultValue={values.newQuestion}
-                    />
-                </Row>
-                <Row>
-                    <span className="card-title black-text"><h5>Choose An Existing Library</h5></span>
-                </Row>
-            </>
+          <NewLibraryForm
+            nextStep={this.nextStep}
+            handleChange={this.handleChange}
+            handleLibrarySubmit={this.handleLibrarySubmit}
+            values={values}
+          />
         )
+      case 2:
+        return <NewLibrarySuccess/>;
+      default: return null;
     }
+
+  }
 }
 
 export default AddLibrary
-
-

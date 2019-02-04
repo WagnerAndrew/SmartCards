@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Form from '../components/NewCard/Form'
-import CardConfirm from '../components/NewCard/CardConfirm'
-import CardSuccess from '../components/NewCard/CardSuccess'
+import NewCardForm from '../components/NewCard/NewCardForm'
+import NewCardConfirm from '../components/NewCard/NewCardConfirm'
+import NewCardSuccess from '../components/NewCard/NewCardSuccess'
 import API from  '../utils/API'
 
 export class AddCard extends Component {
@@ -55,7 +55,7 @@ export class AddCard extends Component {
     switch (step) {
       case 1:
         return (
-          <Form
+          <NewCardForm
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
@@ -63,7 +63,7 @@ export class AddCard extends Component {
         )
       case 2:
         return (
-          <CardConfirm
+          <NewCardConfirm
           handleCardSubmit={this.handleCardSubmit}
           nextStep={this.nextStep}
           prevStep={this.prevStep}
@@ -71,7 +71,7 @@ export class AddCard extends Component {
         />
         )
       case 3:
-        return <CardSuccess/>;
+        return <NewCardSuccess/>;
       default: return null;
     }
 

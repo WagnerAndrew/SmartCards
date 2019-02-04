@@ -1,3 +1,4 @@
 module.exports = {
-  Card: require("./card")
+  Card: require("./card"),
+  Library: require("./library")
 };

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Button, Row} from 'react-materialize'
 
 
-export class CardConfirm extends Component {
+export class NewCardConfirm extends Component {
 
     continue = e => {
         e.preventDefault();
@@ -25,11 +25,11 @@ export class CardConfirm extends Component {
                 <div className="flow-text">
                     <div className="card">
                         <div className="card-content action question">
-                            <span className="card-title activator grey-text text-darken-4">Question<a className="btn-floating btn-large waves-effect waves-light right grey lighten-5"><i className="material-icons black-text">launch</i></a></span>
+                            <span className="card-title activator grey-text text-darken-4">Question<button className="btn-floating btn-large waves-effect waves-light right grey lighten-5"><i className="material-icons black-text">launch</i></button></span>
                             <p>{newQuestion}</p>
                         </div>
                         <div className="card-reveal">
-                            <span className="card-title grey-text text-darken-4">Answer<a className="btn-floating btn-large waves-effect waves-light right grey lighten-5"><i className="material-icons black-text">close</i></a></span>
+                            <span className="card-title grey-text text-darken-4">Answer<button className="btn-floating btn-large waves-effect waves-light right grey lighten-5"><i className="material-icons black-text">close</i></button></span>
                             <p>{newAnswer}</p>
                         </div>
 
@@ -49,4 +49,4 @@ export class CardConfirm extends Component {
     }
 }
 
-export default CardConfirm
+export default NewCardConfirm

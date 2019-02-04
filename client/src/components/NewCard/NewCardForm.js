@@ -4,7 +4,7 @@ import { Button, Row, Input } from 'react-materialize'
 
 
 
-export class Form extends Component {
+export class NewCardForm extends Component {
 
     continue = e => {
         e.preventDefault();
@@ -45,4 +45,4 @@ export class Form extends Component {
 }
 
 
-export default Form
+export default NewCardForm
