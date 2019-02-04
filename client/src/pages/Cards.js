@@ -105,6 +105,7 @@ export class Cards extends Component {
                         </IncorrectAnswers>
                     </>
                 )
+            default: return null;
         }
     }
 }

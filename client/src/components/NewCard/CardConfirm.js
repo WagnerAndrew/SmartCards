@@ -19,7 +19,7 @@ export class CardConfirm extends Component {
 
         return (
             <>
-                <Row className="inputField">
+                <Row>
                     <span className="card-title black-text"><h4>Do You Like Your New Card?</h4></span>
                 </Row>
                 <div className="flow-text">

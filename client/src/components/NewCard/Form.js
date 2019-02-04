@@ -3,16 +3,12 @@ import { Button, Row, Input } from 'react-materialize'
 
 
 
-export class NewAnswer extends Component {
+
+export class Form extends Component {
 
     continue = e => {
         e.preventDefault();
         this.props.nextStep();
-    }
-
-    back = e => {
-        e.preventDefault();
-        this.props.prevStep();
     }
 
     render() {
@@ -20,6 +16,15 @@ export class NewAnswer extends Component {
 
         return (
             <>
+                <Row className="inputField">
+                    <span className="card-title black-text"><h4>New Question</h4></span>
+                    <Input
+                        placeholder="Enter Your New Question Here"
+                        s={12}
+                        onChange={handleChange('newQuestion')}
+                        defaultValue={values.newQuestion}
+                    />
+                </Row>
                 <Row className="inputField">
                     <span className="card-title black-text"><h4>New Answer</h4></span>
                     <Input
@@ -30,17 +35,14 @@ export class NewAnswer extends Component {
                     />
                 </Row>
 
-                <Button waves='light' className="grey lighten-1" onClick={this.back}>
-                    Back
-                </Button>
 
                 <Button waves='light' className="grey lighten-3 black-text" onClick={this.continue}>
                     Continue
-                    </Button>
-
+                </Button>
             </>
         )
     }
 }
 
-export default NewAnswer
+
+export default Form

@@ -1,8 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from './components/Card/Navbar'
+import Navbar from './components/Nav/Navbar'
+import AddLibrary from "./pages/AddLibrary";
 import Cards from './pages/Cards'
-import NewCard from './pages/NewCard'
+import AddCard from './pages/AddCard'
 import NoMatch from "./pages/NoMatch";
 import './App.css';
 
@@ -12,8 +13,8 @@ function App() {
       <div className="App container">
         <Navbar />
         <Switch>
-          <Route exact path="/" component={Cards} />
-          <Route exact path="/add" component={NewCard} />
+          <Route exact path="/addLibrary" component={AddLibrary} />
+          <Route exact path="/addCard" component={AddCard} />
           <Route component={NoMatch} />
         </Switch>
       </div>

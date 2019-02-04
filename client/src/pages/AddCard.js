@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import NewQuestion from '../components/NewCard/NewQuestion';
-import NewAnswer from '../components/NewCard/NewAnswer';
+import Form from '../components/NewCard/Form'
 import CardConfirm from '../components/NewCard/CardConfirm'
 import CardSuccess from '../components/NewCard/CardSuccess'
 import API from  '../utils/API'
 
-export class NewCard extends Component {
+export class AddCard extends Component {
 
   state = {
     step: 1,
     newQuestion: '',
-    newAnswer: '', 
-    guess: false
+    newAnswer: ''
 
   }
 
@@ -41,8 +39,8 @@ export class NewCard extends Component {
     if (this.state.newQuestion && this.state.newAnswer) {
       API.saveCard({
         question: this.state.newQuestion,
-        answer: this.state.newAnswer, 
-        guess: this.state.guess
+        answer: this.state.newAnswer
+
       })
         .then(res => this.nextStep())
         .catch(err => console.log(err));
@@ -57,22 +55,13 @@ export class NewCard extends Component {
     switch (step) {
       case 1:
         return (
-          <NewQuestion
+          <Form
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
           />
         )
       case 2:
-        return (
-          <NewAnswer
-          nextStep={this.nextStep}
-          prevStep={this.prevStep}
-          handleChange={this.handleChange}
-          values={values}
-        />
-        )
-      case 3:
         return (
           <CardConfirm
           handleCardSubmit={this.handleCardSubmit}
@@ -81,11 +70,12 @@ export class NewCard extends Component {
           values={values}
         />
         )
-        case 4:
+      case 3:
         return <CardSuccess/>;
-        
+      default: return null;
     }
+
   }
 }
 
-export default NewCard
+export default AddCard

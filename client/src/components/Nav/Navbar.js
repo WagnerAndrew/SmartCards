@@ -14,7 +14,8 @@ export default () => (
                                 <NavItem onClick={() => console.log('test click')}>CSS</NavItem>
                         </Dropdown> */}
                         <NavItem href="/">Libraries</NavItem>
-                        <NavItem href="/add">Add Cards</NavItem>
+                        <NavItem href="/addLibrary">Add Library</NavItem>
+                        <NavItem href="/addCard">Add Card</NavItem>
                 </Navbar>
         </>
 )
