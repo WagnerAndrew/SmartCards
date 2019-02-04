@@ -17,7 +17,7 @@ module.exports = {
     db.Card
       .create(req.body)
       .then(dbModel => {
-        return db.Library.findOneAndUpdate({ _id: req.params.libraryID }, { $push: {cardsID: dbModel._id} }, { new: true })
+        return db.Library.findOneAndUpdate({ _id: req.body.library }, { $push: {cardsID: dbModel._id} }, { new: true })
       .then (dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
       })

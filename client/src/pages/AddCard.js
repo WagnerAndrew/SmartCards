@@ -8,6 +8,7 @@ export class AddCard extends Component {
 
   state = {
     step: 1,
+    library: '',
     newQuestion: '',
     newAnswer: ''
 
@@ -30,14 +31,17 @@ export class AddCard extends Component {
 
   
   handleChange = input => e => {
+    console.log("This handleChange input is: ", e.target.value);
+    
     this.setState({ [input]: e.target.value })
   };
 
   
   handleCardSubmit = () => {
    
-    if (this.state.newQuestion && this.state.newAnswer) {
+    if (this.state.library &&this.state.newQuestion && this.state.newAnswer) {
       API.saveCard({
+        library: this.state.library,
         question: this.state.newQuestion,
         answer: this.state.newAnswer
 
@@ -49,8 +53,8 @@ export class AddCard extends Component {
 
   
   render() {
-    const { step, newQuestion, newAnswer } = this.state;
-    const values = { newQuestion, newAnswer };
+    const { step, library, newQuestion, newAnswer } = this.state;
+    const values = { library, newQuestion, newAnswer };
 
     switch (step) {
       case 1:
