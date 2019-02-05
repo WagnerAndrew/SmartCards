@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Row } from 'react-materialize'
+import { Collection, CollectionItem, Row } from 'react-materialize'
 
 import API from '../utils/API'
 
@@ -30,15 +30,15 @@ export class Libraries extends Component {
         return (
 
             <Row className="inputField">
-                {this.state.libraries.map(button => (
+            <span className="card-title black-text"><h5>Select A Library To Study</h5></span>
 
-                    <Row>
-                        <Button waves='light' className="grey lighten-3 black-text">
+                <Collection>
+                    {this.state.libraries.map(button => (
+                        <CollectionItem href={"libraries/" + button._id}>
                             {button.library}
-                        </Button>
-                    </Row>
-
-                ))}
+                        </CollectionItem>
+                    ))}
+                </Collection>
             </Row>
         )
     }

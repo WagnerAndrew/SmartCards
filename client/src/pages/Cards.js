@@ -86,7 +86,7 @@ export class Cards extends Component {
             case 2:
                 return (
                     <>
-                        <span className="card-title black-text"><h4>Results</h4></span>
+                        <span className="card-title black-text"><h5>Results</h5></span>
                         <CorrectAnswers>
                             {this.state.correct.map(table => (
                                 <tr>
@@ -110,18 +110,3 @@ export class Cards extends Component {
     }
 }
 export default Cards
-
-
-
-
-//   render() {
-//     const { step, correct, incorrect, question, answer } = this.state;
-
-
-//     return (
-//         <>
-//             <Card question={this.state.question} answer={this.state.answer}/>
-//             <CardButtons nextCard={this.nextCard} correct={this.correct} incorrect={this.incorrect}/>
-//         </>
-//     )
-// }

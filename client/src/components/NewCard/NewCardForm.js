@@ -6,19 +6,21 @@ export class NewCardForm extends Component {
 
     state = {
         libraries: [], 
-        defVal: 0
+        defVal: [0]
     }
 
     componentDidMount() {
         this.loadLibraries();
+        console.log("this defVal is :", this.state.defVal);
+        
     }
 
 
     loadLibraries = () => {
         API.getLibraries()
             .then(res =>
-                // console.log("loadCards data is: ",res.data)
-
+                // console.log("loadCards res.data[0]._id is: ",res.data[0]._id)
+            
                 this.setState({ 
                     libraries: res.data,
                     defVal: res.data[0]._id
@@ -36,11 +38,12 @@ export class NewCardForm extends Component {
 
     render() {
         const { values, handleChange } = this.props;
-
+        
         return (
             <>
+
                 <Row className="inputField">
-                <span className="card-title black-text"><h4>Select A Library For The New Card</h4></span>
+                <span className="card-title black-text"><h5>Select A Library For The New Card</h5></span>
 
                 <Input s={12} type='select' defaultValue={this.state.defVal} onChange={handleChange('library')}>
                 {this.state.libraries.map(button => (
@@ -50,7 +53,7 @@ export class NewCardForm extends Component {
                 </Input>
                 </Row>
                 <Row>
-                    <span className="card-title black-text"><h4>New Question</h4></span>
+                    <span className="card-title black-text"><h5>New Question</h5></span>
                     <Input
                         placeholder="Enter Your New Question Here"
                         s={12}
@@ -59,7 +62,7 @@ export class NewCardForm extends Component {
                     />
                 </Row>
                 <Row>
-                    <span className="card-title black-text"><h4>New Answer</h4></span>
+                    <span className="card-title black-text"><h5>New Answer</h5></span>
                     <Input
                         placeholder="Enter Your New Answer Here"
                         s={12}

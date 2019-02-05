@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Navbar from './components/Nav/Navbar'
 import AddCard from './pages/AddCard'
 import AddLibrary from './pages/AddLibrary'
+import Cards from './pages/Cards'
 import Libraries from './pages/Libraries'
 import NoMatch from './pages/NoMatch'
 import './App.css'
@@ -14,6 +15,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Libraries} />
+          <Route exact path="/libraries/:id" component={Cards} />
           <Route exact path="/addLibrary" component={AddLibrary} />
           <Route exact path="/addCard" component={AddCard} />
           <Route component={NoMatch} />

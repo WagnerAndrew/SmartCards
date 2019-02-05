@@ -20,7 +20,7 @@ export class NewCardConfirm extends Component {
         return (
             <>
                 <Row>
-                    <span className="card-title black-text"><h4>Do You Like Your New Card?</h4></span>
+                    <span className="card-title black-text"><h5>Do You Like Your New Card?</h5></span>
                 </Row>
                 <div className="flow-text">
                     <div className="card">
@@ -42,7 +42,7 @@ export class NewCardConfirm extends Component {
                 </Button>
                 
                 <Button waves='light' className="green lighten  newCardBtn" onClick={this.continue}>
-                    Looks Good! Save it
+                    Looks Good! Save It
                 </Button>
             </>
         )
