@@ -4,7 +4,6 @@
   
 }
 
-
 .card {
   width: 80%;
   height: auto;
@@ -14,11 +13,9 @@
   
 }
 
-
-.dropdown-content li a {
-  color: black !important;
+.dropdown-content li>a, .dropdown-content li>span {
+  color:#4caf50 !important;
 }
-
 
 .results {
   margin-top: 1em;
@@ -31,3 +28,12 @@
 .libBtn {
   width: 300px !important
 }
+
+.dropdown-content li>a, .dropdown-content li>span {
+  color:#4caf50 !important;
+}
+
+
+input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #4caf50;
+  box-shadow: 0 1px 0 0 #4caf50;}

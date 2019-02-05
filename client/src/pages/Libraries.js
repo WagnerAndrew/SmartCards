@@ -39,6 +39,7 @@ export class Libraries extends Component {
 
                 // this.setState({ cards: res.data, correct: [], incorrect: [], question: res.data[index].question, answer: res.data[index].answer })
             )
+            .then
             .catch(err => console.log(err));
     };
 
