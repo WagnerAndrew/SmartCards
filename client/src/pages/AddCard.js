@@ -29,6 +29,13 @@ export class AddCard extends Component {
     })
   };
 
+  anotherCard = () => {
+    const { step } = this.state;
+    this.setState({
+      step: 1
+    })
+  };
+
   
   handleChange = input => e => {
     console.log("This handleChange input is: ", e.target.value);
@@ -75,7 +82,7 @@ export class AddCard extends Component {
         />
         )
       case 3:
-        return <NewCardSuccess/>;
+        return <NewCardSuccess anotherCard={this.anotherCard}/>;
       default: return null;
     }
 

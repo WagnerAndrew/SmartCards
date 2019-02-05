@@ -14,6 +14,11 @@ export class NewCardSuccess extends Component {
         this.props.prevStep();
     }
 
+    add = e => {
+        e.preventDefault();
+        this.props.anotherCard();
+    }
+
     render() {
 
         return (
@@ -27,11 +32,9 @@ export class NewCardSuccess extends Component {
                     Libraries
                 </Button>
             </Link>
-            <Link to={"/addCard+"}>
-                <Button waves='light' className="grey lighten-1 black-text">
+                <Button waves='light' className="grey lighten-1 black-text" onClick={this.add}>
                     Add Another Card
                 </Button>
-            </Link>
             </>
         )
     }
