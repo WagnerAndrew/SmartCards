@@ -23,10 +23,12 @@ export class NewLibrarySuccess extends Component {
                 <span className="card-title black-text"><h5>Don't forget to add some cards too</h5></span>
             </Row>
             <Link to={"/"}>
-                <Button waves='light' className="grey lighten-3 black-text" href="/">
+                <Button waves='light' className="grey lighten-3 black-text">
                     Libraries
                 </Button>
-                <Button waves='light' className="grey lighten-1 black-text" href="/addCard">
+            </Link>
+            <Link to={"/addCard"}>
+                <Button waves='light' className="grey lighten-1 black-text">
                     Add Cards
                 </Button>
             </Link>

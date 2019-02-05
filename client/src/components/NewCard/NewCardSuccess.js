@@ -23,11 +23,15 @@ export class NewCardSuccess extends Component {
                 <span className="card-title black-text"><h5>How's it feel to be so smart?</h5></span>
             </Row>
             <Link to={"/"}>
-                <Button waves='light' className="grey lighten-3 black-text" href="/">
+                <Button waves='light' className="grey lighten-3 black-text">
                     Libraries
                 </Button>
             </Link>
-               
+            <Link to={"/addCard+"}>
+                <Button waves='light' className="grey lighten-1 black-text">
+                    Add Another Card
+                </Button>
+            </Link>
             </>
         )
     }
