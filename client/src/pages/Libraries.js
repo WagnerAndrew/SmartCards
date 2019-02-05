@@ -32,14 +32,20 @@ export class Libraries extends Component {
     };
 
     loadCards = id => {
-        const { index } = this.state;
+        const { index, step } = this.state;
         API.getLibrary(id)
             .then(res =>
-                console.log("loadCards data is: ",res.data)
+                // console.log("loadCards data is: ",res.data)
 
-                // this.setState({ cards: res.data, correct: [], incorrect: [], question: res.data[index].question, answer: res.data[index].answer })
+                this.setState({ 
+                    correct: [],
+                    incorrect: [],
+                    cards: res.data.cardsID,
+                    question: res.data.cardsID[index].question,
+                    answer: res.data.cardsID[index].answer, 
+                    step: step + 1
+                 })
             )
-            .then
             .catch(err => console.log(err));
     };
 

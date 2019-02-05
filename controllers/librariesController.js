@@ -15,8 +15,8 @@ module.exports = {
   // },
   findById: function (req, res){
     db.Library
-      .findById(req.params.id)
-      .populate("Card")
+      .findById({_id: req.params.id})
+      .populate("cardsID")
       .then(dbCard => res.json(dbCard))
       .catch(err => res.json(err));
   },
