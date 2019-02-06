@@ -1,11 +1,11 @@
 {
-  "name": "SmartCards",
+  "name": "smartcards",
   "version": "1.0.0",
   "description": "SmartCards digital study app",
   "engines": {
     "node": "10.3.0"
   },
-  
+
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
