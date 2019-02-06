@@ -18,25 +18,25 @@ export class NewLibrarySuccess extends Component {
 
         return (
             <>
-            <Row className="inputField flow-text">
-                <span className="card-title black-text"><h4>Thanks for adding another library!</h4></span>
-                <span className="card-title black-text"><h5>Don't forget to add some cards too</h5></span>
-            </Row>
-            <Link to={"/"}>
-                <Button waves='light' className="grey lighten-3 black-text">
-                    Libraries
-                </Button>
-            </Link>
-            <Link to={"/addCard"}>
-                <Button waves='light' className="grey lighten-1 black-text">
-                    Add Cards
-                </Button>
-            </Link>
-               
+                <Row className="center-align">
+                    <span className="card-title black-text"><h4>Thanks for adding a library!</h4></span>
+                    <span className="card-title black-text"><h5>Don't forget to add some cards...</h5></span>
+                </Row>
+                <Row className="center-align">
+                <Link to={"/"}>
+                    <Button waves='light' className="grey lighten-3 black-text">
+                        Libraries
+                    </Button>
+                </Link>
+                <Link to={"/addCard"}>
+                    <Button waves='light' className="grey lighten-2 black-text">
+                        Add Cards
+                    </Button>
+                </Link>
+                </Row>
             </>
         )
     }
 }
-
 
 export default NewLibrarySuccess

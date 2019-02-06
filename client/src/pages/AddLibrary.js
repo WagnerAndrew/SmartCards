@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NewLibraryForm from '../components/NewLibrary/NewLibraryForm'
 import NewLibrarySuccess from '../components/NewLibrary/NewLibrarySuccess'
-import API from  '../utils/API'
+import API from '../utils/API'
 
 export class AddLibrary extends Component {
 
@@ -16,14 +16,13 @@ export class AddLibrary extends Component {
       step: step + 1
     })
   };
-  
+
   handleChange = input => e => {
     this.setState({ [input]: e.target.value })
   };
 
-  
   handleLibrarySubmit = () => {
-   
+
     if (this.state.newLibrary) {
       API.saveLibrary({
         library: this.state.newLibrary
@@ -34,7 +33,6 @@ export class AddLibrary extends Component {
     }
   };
 
-  
   render() {
     const { step, newLibrary } = this.state;
     const values = { newLibrary };
@@ -50,7 +48,7 @@ export class AddLibrary extends Component {
           />
         )
       case 2:
-        return <NewLibrarySuccess/>;
+        return <NewLibrarySuccess />;
       default: return null;
     }
 

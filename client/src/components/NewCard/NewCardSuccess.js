@@ -23,18 +23,20 @@ export class NewCardSuccess extends Component {
 
         return (
             <>
-            <Row className="inputField flow-text">
-                <span className="card-title black-text"><h4>Thanks for adding the card!</h4></span>
-                <span className="card-title black-text"><h5>How's it feel to be so smart?</h5></span>
-            </Row>
-            <Link to={"/"}>
-                <Button waves='light' className="grey lighten-3 black-text">
-                    Libraries
-                </Button>
-            </Link>
-                <Button waves='light' className="grey lighten-1 black-text" onClick={this.add}>
-                    Add Another Card
-                </Button>
+                <Row className="center-align">
+                    <span className="card-title black-text"><h4>Thanks for adding a card!</h4></span>
+                    <span className="card-title black-text"><h5>How's it feel to be so smart?</h5></span>
+                </Row>
+                <Row className="center-align">
+                <Link to={"/"}>
+                    <Button waves='light' className="grey lighten-3 black-text">
+                        Libraries
+                    </Button>
+                </Link>
+                    <Button waves='light' className="grey lighten-2 black-text" onClick={this.add}>
+                        Add Another Card
+                    </Button>
+                </Row>
             </>
         )
     }

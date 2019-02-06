@@ -10,7 +10,6 @@ export class CardButtons extends Component {
         this.props.incorrect();
     }
 
-
     nextCard = e => {
         e.preventDefault();
         this.props.nextCard();
@@ -31,25 +30,25 @@ export class CardButtons extends Component {
     render() {
         return (
             <>
-                <Row>
-                    <Col s={4} className="center-align">
+                <Row className= "center-align">
+                    <Col s={4} >
                         <Button waves='light' className="red lighten" onClick={this.incorrect}>
                             <Icon>thumb_down</Icon>
                         </Button>
                     </Col>
-                    <Col s={4} className="center-align">
+                    <Col s={4}>
                         <Button waves='light' className="grey lighten-3 black-text" onClick={this.nextCard}>
                             Next Card
                     </Button>
                     </Col>
-                    <Col s={4} className="center-align">
+                    <Col s={4} >
                         <Button waves='light' className="green lighten" onClick={this.correct}>
                             <Icon>thumb_up</Icon>
                         </Button>
                     </Col>
                 </Row>
-                <Row>
-                    <Col s={12} className="center-align">
+                <Row className= "center-align">
+                    <Col s={12} >
                         <Button waves='light' flat={true} className="grey lighten-5 black-text" onClick={this.results} >
                             Finish
                         </Button>
@@ -57,7 +56,6 @@ export class CardButtons extends Component {
                 </Row>
             </>
         )
-
     }
 }
 

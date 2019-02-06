@@ -17,7 +17,7 @@ export class NewLibraryForm extends Component {
         return (
             <>
                 <Row className="inputField">
-                    <span className="card-title black-text"><h5>New Library</h5></span>
+                    <span className="card-title black-text center-align"><h5>New Library</h5></span>
                     <Input
                         placeholder="Enter Your New Library Here"
                         s={12}
@@ -25,10 +25,11 @@ export class NewLibraryForm extends Component {
                         defaultValue={values.newLibrary}
                     />
                 </Row>
-                
-                <Button waves='light' className="green lighten  newCardBtn" onClick={this.continue}>
-                    Save It
-                </Button>
+                <Row className="center-align">
+                    <Button waves='light' className="green lighten  newCardBtn" onClick={this.continue}>
+                        Save It
+                    </Button>
+                </Row>
             </>
         )
     }

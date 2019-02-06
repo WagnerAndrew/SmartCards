@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NewCardForm from '../components/NewCard/NewCardForm'
 import NewCardConfirm from '../components/NewCard/NewCardConfirm'
 import NewCardSuccess from '../components/NewCard/NewCardSuccess'
-import API from  '../utils/API'
+import API from '../utils/API'
 
 export class AddCard extends Component {
 
@@ -21,7 +21,6 @@ export class AddCard extends Component {
     })
   };
 
-  
   prevStep = () => {
     const { step } = this.state;
     this.setState({
@@ -30,23 +29,22 @@ export class AddCard extends Component {
   };
 
   anotherCard = () => {
-    const { step } = this.state;
     this.setState({
       step: 1
     })
   };
 
-  
+
   handleChange = input => e => {
     console.log("This handleChange input is: ", e.target.value);
-    
+
     this.setState({ [input]: e.target.value })
   };
 
-  
+
   handleCardSubmit = () => {
-   
-    if (this.state.library &&this.state.newQuestion && this.state.newAnswer) {
+
+    if (this.state.library && this.state.newQuestion && this.state.newAnswer) {
       API.saveCard({
         library: this.state.library,
         question: this.state.newQuestion,
@@ -58,7 +56,7 @@ export class AddCard extends Component {
     }
   };
 
-  
+
   render() {
     const { step, library, newQuestion, newAnswer } = this.state;
     const values = { library, newQuestion, newAnswer };
@@ -75,14 +73,14 @@ export class AddCard extends Component {
       case 2:
         return (
           <NewCardConfirm
-          handleCardSubmit={this.handleCardSubmit}
-          nextStep={this.nextStep}
-          prevStep={this.prevStep}
-          values={values}
-        />
+            handleCardSubmit={this.handleCardSubmit}
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+          />
         )
       case 3:
-        return <NewCardSuccess anotherCard={this.anotherCard}/>;
+        return <NewCardSuccess anotherCard={this.anotherCard} />;
       default: return null;
     }
 
