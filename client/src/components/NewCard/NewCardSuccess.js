@@ -24,8 +24,8 @@ export class NewCardSuccess extends Component {
         return (
             <>
                 <Row className="center-align">
-                    <span className="card-title black-text"><h4>Thanks for adding a card!</h4></span>
-                    <span className="card-title black-text"><h5>How's it feel to be so smart?</h5></span>
+                    <span className="black-text"><h4>Thanks for adding a card!</h4></span>
+                    <span className="black-text"><h5>How's it feel to be so smart?</h5></span>
                 </Row>
                 <Row className="center-align">
                 <Link to={"/"}>

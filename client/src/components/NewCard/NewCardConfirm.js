@@ -20,7 +20,7 @@ export class NewCardConfirm extends Component {
         return (
             <>
                 <Row className="center-align">
-                    <span className="card-title black-text"><h5>Do You Like Your New Card?</h5></span>
+                    <span className="black-text"><h5>Do You Like Your New Card?</h5></span>
                 </Row>
 
                     <div className="card">

@@ -14,6 +14,7 @@ export class AddCard extends Component {
 
   }
 
+
   nextStep = () => {
     const { step } = this.state;
     this.setState({
@@ -30,6 +31,9 @@ export class AddCard extends Component {
 
   anotherCard = () => {
     this.setState({
+      library: '',
+      newQuestion: '',
+      newAnswer: '',
       step: 1
     })
   };

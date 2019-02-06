@@ -1,31 +1,30 @@
 import React, { Component } from 'react';
 import { Button, Row, Input } from 'react-materialize'
-import API from  '../../utils/API'
+import API from '../../utils/API'
 
 export class NewCardForm extends Component {
 
     state = {
-        libraries: [], 
-        defVal: [0]
+        libraries: []
     }
 
     componentDidMount() {
         this.loadLibraries();
         console.log("this defVal is :", this.state.defVal);
-        
+
     }
 
     loadLibraries = () => {
         API.getLibraries()
             .then(res =>
 
-                this.setState({ 
+                this.setState({
                     libraries: res.data,
                     defVal: res.data[0]._id
                 })
             )
             .catch(err => console.log(err)
-        );
+            );
     };
 
     continue = e => {
@@ -35,19 +34,20 @@ export class NewCardForm extends Component {
 
     render() {
         const { values, handleChange } = this.props;
-        
+
         return (
             <>
                 <Row>
-                    <span className="card-title black-text center-align"><h5>Select A Library For The New Card</h5></span>
-                        <Input s={12} type='select' defaultValue={this.state.defVal} onChange={handleChange('library')}>
-                            {this.state.libraries.map(button => (
-                                    <option value={ button._id }>{button.library}</option>
-                            ))}
-                        </Input>
+                    <span className="black-text center-align"><h5>Select A Library For The New Card</h5></span>
+                    <Input s={12} type='select' onChange={handleChange('library')}>
+                            <option value="" disabled selected>Select A Library</option>
+                        {this.state.libraries.map(button => (
+                            <option value={button._id}>{button.library}</option>
+                        ))}
+                    </Input>
                 </Row>
                 <Row>
-                    <span className="card-title black-text center-align"><h5>New Question</h5></span>
+                    <span className="black-text center-align"><h5>New Question</h5></span>
                     <Input
                         placeholder="Enter Your New Question Here"
                         s={12}
@@ -56,7 +56,7 @@ export class NewCardForm extends Component {
                     />
                 </Row>
                 <Row>
-                    <span className="card-title black-text center-align"><h5>New Answer</h5></span>
+                    <span className="black-text center-align"><h5>New Answer</h5></span>
                     <Input
                         placeholder="Enter Your New Answer Here"
                         s={12}
@@ -71,7 +71,7 @@ export class NewCardForm extends Component {
 
 
                 </Row>
-           
+
             </>
         )
     }

@@ -19,8 +19,8 @@ export class NewLibrarySuccess extends Component {
         return (
             <>
                 <Row className="center-align">
-                    <span className="card-title black-text"><h4>Thanks for adding a library!</h4></span>
-                    <span className="card-title black-text"><h5>Don't forget to add some cards...</h5></span>
+                    <span className="black-text"><h4>Thanks for adding a library!</h4></span>
+                    <span className="black-text"><h5>Don't forget to add some cards...</h5></span>
                 </Row>
                 <Row className="center-align">
                 <Link to={"/"}>

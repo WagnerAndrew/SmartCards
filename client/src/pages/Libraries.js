@@ -119,7 +119,7 @@ export class Libraries extends Component {
             case 1:
                 return (
                     <Row>
-                        <span className="card-title black-text center-align"><h5>Select A Library To Study</h5></span>
+                        <span className="black-text center-align"><h5>Select A Library To Study</h5></span>
 
                         <div class="collection center-align">
                             {this.state.libraries.map(button => (
@@ -131,17 +131,17 @@ export class Libraries extends Component {
             case 2:
                 return (
                     <>
-                        <span className="card-title black-text center-align"><h4>{this.state.libraryName}</h4></span>
+                        <span className="black-text center-align"><h4>{this.state.libraryName}</h4></span>
                         <Card question={question} answer={answer} />
                         <CardButtons nextCard={this.nextCard} correct={this.correct} incorrect={this.incorrect} results={this.results} />
-                        <span className="card-title black-text center-align"><h5>{this.state.resultText}</h5></span>
+                        <span className="black-text center-align"><h5>{this.state.resultText}</h5></span>
                     </>
                 )
             case 3:
                 return (
                     <>
-                        <span className="card-title black-text center-align"><h4>{this.state.libraryName}</h4></span>
-                        <span className="card-title black-text center-align"><h5>Results</h5></span>
+                        <span className="black-text center-align"><h4>{this.state.libraryName}</h4></span>
+                        <span className="black-text center-align"><h5>Results</h5></span>
                         <CorrectAnswers>
                             {this.state.correct.map(table => (
                                 <tr>
