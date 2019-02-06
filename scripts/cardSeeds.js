@@ -1,21 +1,18 @@
-
 const mongoose = require("mongoose");
 const db = require("../models");
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/codecards"
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/codecards";
 
 mongoose
   .connect(MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true })
   .then(() => console.log('MongoDB Seeded...'))
-​
 
-​
 let libSeed = {
     library: "Seed Library",
-    cardsID: [ ]
+    cardsID: []
  };
-​
-const cardSeed = [
+
+let cardSeed = [
     {
       question: "What does each letter of the MERN acronym represent?",
       answer: "MongoDB, Express, React, and Node"
@@ -31,15 +28,14 @@ const cardSeed = [
     {
       question: "What is the primary purpose of a transpiling tool like Babel?",
       answer: "To convert newer unsupported JS to JS the browser understands"
-    },
+    }
   ];
-​
+
 db.Card
  .deleteMany({})
  .then(() => db.Card.collection.insertMany(cardSeed))
  .then(data => {
   console.log(data.result.n + " cards inserted!");
-  // console.log(data.insertedIds);
   for (let key in data.insertedIds) {
    libSeed.cardsID.push(data.insertedIds[key]);
   }
@@ -56,10 +52,9 @@ db.Card
     console.error(err);
     process.exit(1);
    })
-  // process.exit(0);
- })
- .catch(err => {
-  console.error(err);
-  process.exit(1);
- });
+})
+.catch(err => {
+console.error(err);
+process.exit(1);
+});
 

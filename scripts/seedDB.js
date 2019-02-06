@@ -31,10 +31,19 @@ db.Card
   .remove({})
   .then(() => db.Card.collection.insertMany(cardSeed))
   .then ( (results) =>
-   {console.log ("Results is: ", results)
-    db.Library.findOneAndUpdate({library: "Web Development" }, { $push: { cardsID: results.insertedIds }}, { new: true })})
+   {console.log ("Results is: ", results.ops.length)
+   console.log ("Inserted is: ", results.insertedIds)
+   console.log ("Results is: ", results.ops)
+   for(let i=0; i< results.ops.length;i++)
+   {
+    console.log ("Id: ", results.ops[i]._id)
+    db.Library.findByIdAndUpdate({_id: "5c5b39accd88fb51c413e831"},
+     { $push: { cardsID: results.ops[i]._id }}, { new: true })
+   }
+  })
+    
   .then(data => {
-    console.log(data.result + " records inserted!");
+    console.log(data + " records inserted!");
     process.exit(0);
   })
   .catch(err => {
