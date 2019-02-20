@@ -29,11 +29,11 @@ export class NewCardSuccess extends Component {
                 </Row>
                 <Row className="center-align">
                 <Link to={"/"}>
-                    <Button waves='light' className="grey lighten-3 black-text">
+                    <Button waves='light' className="confirmBtn grey lighten-3 black-text">
                         Libraries
                     </Button>
                 </Link>
-                    <Button waves='light' className="grey lighten-2 black-text" onClick={this.add}>
+                    <Button waves='light' className="confirmBtn grey lighten-2 black-text" onClick={this.add}>
                         Add Another Card
                     </Button>
                 </Row>

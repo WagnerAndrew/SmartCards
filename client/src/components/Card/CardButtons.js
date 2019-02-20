@@ -32,7 +32,7 @@ export class CardButtons extends Component {
             <>
                 <Row className= "center-align">
                     <Col s={4} >
-                        <Button waves='light' className="red lighten" onClick={this.incorrect}>
+                        <Button waves='light' className="red lighten" disabled={this.props.disabled} onClick={this.incorrect}>
                             <Icon>thumb_down</Icon>
                         </Button>
                     </Col>
@@ -42,7 +42,7 @@ export class CardButtons extends Component {
                     </Button>
                     </Col>
                     <Col s={4} >
-                        <Button waves='light' className="green lighten" onClick={this.correct}>
+                        <Button waves='light' className="green lighten" disabled={this.props.disabled} onClick={this.correct}>
                             <Icon>thumb_up</Icon>
                         </Button>
                     </Col>

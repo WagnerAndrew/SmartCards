@@ -17,6 +17,7 @@ export class Libraries extends Component {
         index: 0,
         libraryName: '',
         resultText: '',
+        disabled: false,
         step: 1
 
     }
@@ -51,6 +52,7 @@ export class Libraries extends Component {
                     libraryName: name,
                     question: res.data.cardsID[index].question,
                     answer: res.data.cardsID[index].answer,
+                    disabled: false,
                     step: step + 1
                 })
             )
@@ -63,6 +65,7 @@ export class Libraries extends Component {
         console.log(index, cards.length);
 
         if (index === cards.length - 1) {
+            
             this.results();
 
         } else {
@@ -80,14 +83,17 @@ export class Libraries extends Component {
         const { index, cards } = this.state;
         this.setState({
             question: cards[index].question,
-            answer: cards[index].answer
+            answer: cards[index].answer, 
+            disabled: false
         })
     };
 
     correct = () => {
+
         const { question, answer } = this.state;
 
         this.setState({
+            disabled: true,
             resultText: "Got it!"
         }, () => {
             this.state.correct.push({ question: question, answer: answer })
@@ -99,6 +105,7 @@ export class Libraries extends Component {
         const { question, answer } = this.state;
 
         this.setState({
+            disabled: true,
             resultText: "Missed it!"
         }, () => {
             this.state.incorrect.push({ question: question, answer: answer })
@@ -113,7 +120,7 @@ export class Libraries extends Component {
     }
 
     render() {
-        const { step, question, answer } = this.state;
+        const { step, question, answer, disabled } = this.state;
 
         switch (step) {
             case 1:
@@ -121,11 +128,11 @@ export class Libraries extends Component {
                     <Row>
                         <span className="black-text center-align"><h4>Select A Library To Study</h4></span>
 
-                        <div className="center-align">
+                        <div className="center-align libraries">
                             {this.state.libraries.map(button => (
                                 <ul>
                                     <li>
-                                        <h5><a onClick={() => this.loadCards(button._id, button.library)} class="libraryList hoverable grey-text text-darken-2">{button.library}</a></h5>
+                                        <h5><a onClick={() => this.loadCards(button._id, button.library)} class="libraryList grey-text text-darken-2">{button.library}</a></h5>
                                     </li>
                                 </ul>
                             ))}
@@ -137,7 +144,7 @@ export class Libraries extends Component {
                     <>
                         <span className="black-text center-align"><h4>{this.state.libraryName}</h4></span>
                         <Card question={question} answer={answer} />
-                        <CardButtons nextCard={this.nextCard} correct={this.correct} incorrect={this.incorrect} results={this.results} />
+                        <CardButtons nextCard={this.nextCard} disabled={disabled} correct={this.correct} incorrect={this.incorrect} results={this.results} />
                         <span className="black-text center-align"><h5>{this.state.resultText}</h5></span>
                     </>
                 )
@@ -147,6 +154,7 @@ export class Libraries extends Component {
                         <span className="black-text center-align"><h4>{this.state.libraryName}</h4></span>
                         <span className="black-text center-align"><h5>Results</h5></span>
                         <CorrectAnswers>
+
                             {this.state.correct.map(table => (
                                 <tr>
                                     <td>{table.question}</td>

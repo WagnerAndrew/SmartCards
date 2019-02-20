@@ -8,9 +8,17 @@
   
 }
 
+.libraries {
+  margin-top: 4em;
+}
+
 .libraryList:hover { 
   color: #4caf50 !important;
   cursor: pointer;
+}
+
+.confirmBtn {
+  margin: 5px
 }
 
 .dropdown-content li>a, .dropdown-content li>span {

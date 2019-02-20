@@ -39,11 +39,11 @@ export class NewCardConfirm extends Component {
 
                 <Row className="center-align">
 
-                    <Button waves='light' className="grey lighten-1" onClick={this.back}>
+                    <Button waves='light' className="confirmBtn grey lighten-1" onClick={this.back}>
                         Back
                     </Button>
 
-                    <Button waves='light' className="green lighten" onClick={this.continue}>
+                    <Button waves='light' className="confirmBtn green lighten" onClick={this.continue}>
                         Looks Good! Save It
                     </Button>
 
