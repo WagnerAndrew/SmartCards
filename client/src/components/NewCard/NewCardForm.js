@@ -38,7 +38,7 @@ export class NewCardForm extends Component {
         return (
             <>
                 <Row>
-                    <span className="black-text center-align"><h5>Select A Library For The New Card</h5></span>
+                    <span className="black-text center-align"><h4>Select A Library For The New Card</h4></span>
                     <Input s={12} type='select' onChange={handleChange('library')}>
                             <option value="" disabled selected>Select A Library</option>
                         {this.state.libraries.map(button => (
@@ -47,7 +47,7 @@ export class NewCardForm extends Component {
                     </Input>
                 </Row>
                 <Row>
-                    <span className="black-text center-align"><h5>New Question</h5></span>
+                    <span className="black-text center-align"><h4>New Question</h4></span>
                     <Input
                         placeholder="Enter Your New Question Here"
                         s={12}
@@ -56,7 +56,7 @@ export class NewCardForm extends Component {
                     />
                 </Row>
                 <Row>
-                    <span className="black-text center-align"><h5>New Answer</h5></span>
+                    <span className="black-text center-align"><h4>New Answer</h4></span>
                     <Input
                         placeholder="Enter Your New Answer Here"
                         s={12}

@@ -8,15 +8,14 @@
   
 }
 
+.libraryList:hover { 
+  color: #4caf50 !important;
+  cursor: pointer;
+}
+
 .dropdown-content li>a, .dropdown-content li>span {
   color:#000000 !important;
 }
-
-/* .collection a.collection-item:not(.active):hover{
-  background-color: #c8e6c9;
-} */
-
-
 
 input[type=text]:focus:not([readonly]) textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #4caf50;

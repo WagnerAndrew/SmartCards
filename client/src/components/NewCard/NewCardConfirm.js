@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Row } from 'react-materialize'
+import { Button, Modal, Row } from 'react-materialize'
 
 
 export class NewCardConfirm extends Component {
@@ -20,19 +20,22 @@ export class NewCardConfirm extends Component {
         return (
             <>
                 <Row className="center-align">
-                    <span className="black-text"><h5>Do You Like Your New Card?</h5></span>
+                    <span className="black-text"><h4>Do You Like Your New Card?</h4></span>
                 </Row>
 
-                    <div className="card">
-                        <div className="card-content action">
-                            <span className="card-title activator grey-text text-darken-4">Question<button className="btn-floating waves-effect waves-light right grey lighten-5"><i className="material-icons black-text">launch</i></button></span>
-                            <p>{newQuestion}</p>
-                        </div>
-                        <div className="card-reveal">
-                            <span className="card-title grey-text text-darken-4">Answer<button className="btn-floating waves-effect waves-light right grey lighten-5"><i className="material-icons black-text">close</i></button></span>
+                <div className="card">
+                    <div className="card-content">
+                        <span className="card-title grey-text text-darken-4" />
+                        <h5>Question</h5>
+                        <p>{newQuestion}</p>
+                        <Modal
+                            header='Answer'
+                            trigger={<a className="btn-floating waves-effect waves-light right grey lighten-5"><i className="material-icons black-text">launch</i></a>}>
                             <p>{newAnswer}</p>
-                        </div>
+                        </Modal>
                     </div>
+
+                </div>
 
                 <Row className="center-align">
 

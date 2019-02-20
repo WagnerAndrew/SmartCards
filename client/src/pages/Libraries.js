@@ -92,7 +92,7 @@ export class Libraries extends Component {
         }, () => {
             this.state.correct.push({ question: question, answer: answer })
         })
-        
+
     };
 
     incorrect = () => {
@@ -119,11 +119,15 @@ export class Libraries extends Component {
             case 1:
                 return (
                     <Row>
-                        <span className="black-text center-align"><h5>Select A Library To Study</h5></span>
+                        <span className="black-text center-align"><h4>Select A Library To Study</h4></span>
 
-                        <div class="collection center-align">
+                        <div className="center-align">
                             {this.state.libraries.map(button => (
-                                <a onClick={() => this.loadCards(button._id, button.library)} class="collection-item black-text">{button.library}</a>
+                                <ul>
+                                    <li>
+                                        <h5><a onClick={() => this.loadCards(button._id, button.library)} class="libraryList hoverable grey-text text-darken-2">{button.library}</a></h5>
+                                    </li>
+                                </ul>
                             ))}
                         </div>
                     </Row>

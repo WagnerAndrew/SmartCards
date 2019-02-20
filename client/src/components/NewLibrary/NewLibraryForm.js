@@ -17,7 +17,7 @@ export class NewLibraryForm extends Component {
         return (
             <>
                 <Row className="inputField">
-                    <span className="black-text center-align"><h5>New Library</h5></span>
+                    <span className="black-text center-align"><h4>New Library</h4></span>
                     <Input
                         placeholder="Enter Your New Library Here"
                         s={12}
