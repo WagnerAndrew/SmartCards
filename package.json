@@ -1,7 +1,10 @@
 {
-  "name": "mern",
+  "name": "smartcards",
   "version": "1.0.0",
-  "description": "",
+  "description": "SmartCards digital study app",
+  "engines": {
+    "node": "10.9.0"
+  },
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
