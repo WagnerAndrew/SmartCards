@@ -130,9 +130,9 @@ export class Libraries extends Component {
 
                         <div className="center-align libraries">
                             {this.state.libraries.map(button => (
-                                <ul>
+                                <ul key={button._id}>
                                     <li>
-                                        <h5><a onClick={() => this.loadCards(button._id, button.library)} class="libraryList grey-text text-darken-2">{button.library}</a></h5>
+                                        <h5 onClick={() => this.loadCards(button._id, button.library)} className="libraryList grey-text text-darken-2">{button.library}</h5>
                                     </li>
                                 </ul>
                             ))}

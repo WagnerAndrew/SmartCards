@@ -30,7 +30,7 @@ export class NewCardConfirm extends Component {
                         <p>{newQuestion}</p>
                         <Modal
                             header='Answer'
-                            trigger={<a className="btn-floating waves-effect waves-light right grey lighten-5"><i className="material-icons black-text">launch</i></a>}>
+                            trigger={<button className="btn-floating waves-effect waves-light right grey lighten-5"><i className="material-icons black-text">launch</i></button>}>
                             <p>{newAnswer}</p>
                         </Modal>
                     </div>
