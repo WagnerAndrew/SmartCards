@@ -52,7 +52,7 @@ let card1Seed = [
     },
     {
       question: "What is the driest place on Earth?",
-      answer: "McMurdo Dry Valleys in Antactica"
+      answer: "McMurdo Dry Valleys in Antarctica"
     },
     {
       question: "In what country can you visit Machu Picchu?",
