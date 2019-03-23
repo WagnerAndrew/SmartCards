@@ -143,20 +143,25 @@ export class Libraries extends Component {
             <span className='black-text center-align'>
               <h4>Select A Library To Study</h4>
             </span>
-
-            <div className='center-align libraries'>
-              {this.state.libraries.map(button => (
-                <ul key={button._id}>
-                  <li>
-                    <h5
-                      onClick={() => this.loadCards(button._id, button.library)}
-                      className='libraryList grey-text text-darken-2'
-                    >
-                      {button.library}
-                    </h5>
-                  </li>
-                </ul>
-              ))}
+            <div className='card'>
+              <div className='card-content'>
+                <div className='center-align libraries'>
+                  {this.state.libraries.map(button => (
+                    <ul key={button._id}>
+                      <li>
+                        <h5
+                          onClick={() =>
+                            this.loadCards(button._id, button.library)
+                          }
+                          className='libraryList grey-text text-darken-2'
+                        >
+                          {button.library}
+                        </h5>
+                      </li>
+                    </ul>
+                  ))}
+                </div>
+              </div>
             </div>
           </Row>
         );
@@ -166,19 +171,23 @@ export class Libraries extends Component {
             <span className='black-text center-align'>
               <h4>{this.state.libraryName}</h4>
             </span>
-            <Card question={question} answer={answer} />
-            <CardButtons
-              nextCard={this.nextCard}
-              showNext={showNext}
-              showFinish={showFinish}
-              disabled={disabled}
-              correct={this.correct}
-              incorrect={this.incorrect}
-              results={this.results}
-            />
-            <span className='black-text center-align'>
-              <h5>{this.state.resultText}</h5>
-            </span>
+            <div className='card'>
+              <div className='card-content'>
+                <Card question={question} answer={answer} />
+                <CardButtons
+                  nextCard={this.nextCard}
+                  showNext={showNext}
+                  showFinish={showFinish}
+                  disabled={disabled}
+                  correct={this.correct}
+                  incorrect={this.incorrect}
+                  results={this.results}
+                />
+                <span className='black-text center-align'>
+                  <h5>{this.state.resultText}</h5>
+                </span>
+              </div>
+            </div>
           </>
         );
       case 3:
