@@ -1,30 +1,31 @@
-
 .card {
   width: 80%;
   height: auto;
   margin: 2em auto;
   position: relative;
   padding-bottom: 3em;
-  
 }
 
-.libraries {
-  margin-top: 4em;
-}
-
-.libraryList:hover { 
+.libraryList:hover {
   color: #4caf50 !important;
   cursor: pointer;
 }
 
 .confirmBtn {
-  margin: 5px
+  margin: 5px;
 }
 
-.dropdown-content li>a, .dropdown-content li>span {
-  color:#000000 !important;
+.buttonTop {
+  margin-top: 2em;
 }
 
-input[type=text]:focus:not([readonly]) textarea.materialize-textarea:focus:not([readonly]) {
+.dropdown-content li > a,
+.dropdown-content li > span {
+  color: #000000 !important;
+}
+
+input[type='text']:focus:not([readonly])
+  textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #4caf50;
-  box-shadow: 0 1px 0 0 #4caf50;}
+  box-shadow: 0 1px 0 0 #4caf50;
+}

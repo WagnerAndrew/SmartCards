@@ -171,23 +171,20 @@ export class Libraries extends Component {
             <span className='black-text center-align'>
               <h4>{this.state.libraryName}</h4>
             </span>
-            <div className='card'>
-              <div className='card-content'>
-                <Card question={question} answer={answer} />
-                <CardButtons
-                  nextCard={this.nextCard}
-                  showNext={showNext}
-                  showFinish={showFinish}
-                  disabled={disabled}
-                  correct={this.correct}
-                  incorrect={this.incorrect}
-                  results={this.results}
-                />
-                <span className='black-text center-align'>
-                  <h5>{this.state.resultText}</h5>
-                </span>
-              </div>
-            </div>
+
+            <Card question={question} answer={answer} />
+            <CardButtons
+              nextCard={this.nextCard}
+              showNext={showNext}
+              showFinish={showFinish}
+              disabled={disabled}
+              correct={this.correct}
+              incorrect={this.incorrect}
+              results={this.results}
+            />
+            <span className='black-text center-align'>
+              <h5>{this.state.resultText}</h5>
+            </span>
           </>
         );
       case 3:

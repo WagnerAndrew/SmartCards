@@ -20,28 +20,30 @@ export class NewLibrarySuccess extends Component {
           <span className='black-text'>
             <h4>Thanks for adding a library!</h4>
           </span>
+
           <div className='card'>
             <div className='card-content'>
               <span className='black-text'>
                 <h5>Don't forget to add some cards...</h5>
               </span>
-
-              <Link to={'/'}>
-                <Button
-                  waves='light'
-                  className='confirmBtn grey lighten-3 black-text'
-                >
-                  Libraries
-                </Button>
-              </Link>
-              <Link to={'/addCard'}>
-                <Button
-                  waves='light'
-                  className='confirmBtn grey lighten-2 black-text'
-                >
-                  Add Cards
-                </Button>
-              </Link>
+              <Row className='center-align buttonTop'>
+                <Link to={'/'}>
+                  <Button
+                    waves='light'
+                    className='confirmBtn grey lighten-3 black-text'
+                  >
+                    Libraries
+                  </Button>
+                </Link>
+                <Link to={'/addCard'}>
+                  <Button
+                    waves='light'
+                    className='confirmBtn grey lighten-2 black-text'
+                  >
+                    Add Cards
+                  </Button>
+                </Link>
+              </Row>
             </div>
           </div>
         </Row>
@@ -49,5 +51,4 @@ export class NewLibrarySuccess extends Component {
     );
   }
 }
-
 export default NewLibrarySuccess;

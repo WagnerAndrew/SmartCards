@@ -30,22 +30,23 @@ export class NewCardSuccess extends Component {
               <span className='black-text'>
                 <h5>How's it feel to be so smart?</h5>
               </span>
-
-              <Link to={'/'}>
+              <Row className='center-align buttonTop'>
+                <Link to={'/'}>
+                  <Button
+                    waves='light'
+                    className='confirmBtn grey lighten-3 black-text'
+                  >
+                    Libraries
+                  </Button>
+                </Link>
                 <Button
                   waves='light'
-                  className='confirmBtn grey lighten-3 black-text'
+                  className='confirmBtn grey lighten-2 black-text'
+                  onClick={this.add}
                 >
-                  Libraries
+                  Add Another Card
                 </Button>
-              </Link>
-              <Button
-                waves='light'
-                className='confirmBtn grey lighten-2 black-text'
-                onClick={this.add}
-              >
-                Add Another Card
-              </Button>
+              </Row>
             </div>
           </div>
         </Row>
@@ -53,5 +54,4 @@ export class NewCardSuccess extends Component {
     );
   }
 }
-
 export default NewCardSuccess;
